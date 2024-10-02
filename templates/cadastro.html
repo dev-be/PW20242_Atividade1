@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% set titulo= "Cadastro de Produto" %}
+
+{% block conteudo %}
+<form action="/post_cadastro" method="post">
+    <div class="mb-2 form-floating">
+        <input
+            class="form-control"
+            type="text"
+            name="nome"
+            id="nome"
+            placeholder=" ">
+        <label class="form-label text-dark" for="nome">Nome</label>
+    </div>
+    <div class="mb-2 form-floating">
+        <input
+            class="form-control"
+            type="text"
+            name="descricao"
+            id="descricao"
+            placeholder=" ">
+        <label class="form-label text-dark" for="descricao">Descrição</label>
+    </div>
+    <div class="mb-2 form-floating">
+        <input
+            class="form-control"
+            type="text"
+            name="estoque"
+            id="estoque"
+            placeholder=" ">
+        <label class="form-label text-dark" for="estoque">Estoque</label>
+    </div>
+    <div class="mb-2 form-floating">
+        <input
+            class="form-control"
+            type="text"
+            name="preco"
+            id="preco"
+            placeholder=" ">
+        <label class="form-label text-dark" for="preco">Preço</label>
+    </div>
+
+    <div class="mb-3 form-floating">
+        <select class="form-select" id="categoria" name="categoria" aria-label="Selecione a categoria">
+            <option value="" selected>Selecione a categoria</option>
+            <option value="Alimentos">Alimentos</option>
+            <option value="Limpeza">Limpeza</option>
+            <option value="Eletrônicos">Eletrônicos</option>
+            <option value="Brinquedos">Brinquedos</option>
+            <option value="Vestuário">Vestuário</option>
+            <option value="Automotivo">Automotivo</option>
+            <option value="Esporte&Lazer">Esporte & Lazer</option>
+        </select>
+        <label class="form-label text-dark" for="categoria">Categoria</label>
+    </div>
+
+    <div class="mb-3">
+        <button class="btn btn-outline-dark rounded-3 my-3 shadow" type="submit">Cadastrar</button>
+    </div>
+</form>
+{% endblock %}
