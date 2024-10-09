@@ -1,62 +1,42 @@
 {% extends "base.html" %}
-
-{% set titulo= "Cadastro de Produto" %}
+{% set titulo = "Cadastro de Produto" %}
 
 {% block conteudo %}
-<form action="/post_cadastro" method="post">
-    <div class="mb-2 form-floating">
-        <input
-            class="form-control"
-            type="text"
-            name="nome"
-            id="nome"
-            placeholder=" ">
-        <label class="form-label text-dark" for="nome">Nome</label>
-    </div>
-    <div class="mb-2 form-floating">
-        <input
-            class="form-control"
-            type="text"
-            name="descricao"
-            id="descricao"
-            placeholder=" ">
-        <label class="form-label text-dark" for="descricao">Descrição</label>
-    </div>
-    <div class="mb-2 form-floating">
-        <input
-            class="form-control"
-            type="text"
-            name="estoque"
-            id="estoque"
-            placeholder=" ">
-        <label class="form-label text-dark" for="estoque">Estoque</label>
-    </div>
-    <div class="mb-2 form-floating">
-        <input
-            class="form-control"
-            type="text"
-            name="preco"
-            id="preco"
-            placeholder=" ">
-        <label class="form-label text-dark" for="preco">Preço</label>
-    </div>
 
-    <div class="mb-3 form-floating">
-        <select class="form-select" id="categoria" name="categoria" aria-label="Selecione a categoria">
-            <option value="" selected>Selecione a categoria</option>
-            <option value="Alimentos">Alimentos</option>
-            <option value="Limpeza">Limpeza</option>
-            <option value="Eletrônicos">Eletrônicos</option>
-            <option value="Brinquedos">Brinquedos</option>
-            <option value="Vestuário">Vestuário</option>
-            <option value="Automotivo">Automotivo</option>
-            <option value="Esporte&Lazer">Esporte & Lazer</option>
-        </select>
-        <label class="form-label text-dark" for="categoria">Categoria</label>
+  <form method="post" action="/post_cadastro">
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome" required>
     </div>
 
     <div class="mb-3">
-        <button class="btn btn-outline-dark rounded-3 my-3 shadow" type="submit">Cadastrar</button>
+      <label for="descricao" class="form-label">Descrição</label>
+      <input type="text" class="form-control" id="descricao" name="descricao" required>
     </div>
-</form>
+
+    <div class="mb-3">
+      <label for="estoque" class="form-label">Estoque</label>
+      <input type="number" class="form-control" id="estoque" name="estoque" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="preco" class="form-label">Preço</label>
+      <input type="number" class="form-control" id="preco" name="preco" step="0.01" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="categoria" class="form-label">Categoria</label>
+      <select class="form-select" id="categoria" name="categoria" required>
+        <option value="Alimentos">Alimentos</option>
+        <option value="Limpeza">Limpeza</option>
+        <option value="Eletrônicos">Eletrônicos</option>
+        <option value="Brinquedos">Brinquedos</option>
+        <option value="Vestuário">Vestuário</option>
+        <option value="Automotivo">Automotivo</option>
+        <option value="Esporte&Lazer">Esporte&Lazer</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cadastrar Produto</button>
+  </form>
 {% endblock %}

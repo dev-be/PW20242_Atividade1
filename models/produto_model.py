@@ -1,8 +1,10 @@
+from dataclasses import dataclass
+
 @dataclass
-class Usuario:
-    id: Optional[int] = None
-    nome: Optional[str] = None
-    descricao: Optional[str] = None
-    estoque: Optional[int] = None
-    preco: Optional[int] = None
-    categoria: Optional[str] = None
+class Produto:
+    id: int = None
+    nome: str = None
+    descricao: str = None
+    estoque: int = None
+    preco: float = None
+    categoria: str = None
